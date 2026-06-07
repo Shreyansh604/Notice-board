@@ -20,5 +20,9 @@ A full-stack notice board built with Next.js, Prisma, and TiDB Cloud.
 - Add pagination for large number of notices
 - Add search and filter by category
 
-## AI usage
-Used Claude (Anthropic) to assist with setup, debugging, and code structure throughout the project.
+## AI Usage
+
+Used Claude (Anthropic) to assist with:
+- Project structure and initial setup
+- Prisma v7 configuration and adapter setup
+- Debugging database connection issues (Railway MySQL + Vercel deployment)
