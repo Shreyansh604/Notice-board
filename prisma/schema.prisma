@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -10,9 +11,21 @@ model Notice {
   id          Int      @id @default(autoincrement())
   title       String
   body        String   @db.Text
-  category    String   // "Exam" | "Event" | "General"
-  priority    String   // "Normal" | "Urgent"
+  category    Category @default(General)
+  priority    Priority @default(Normal)
   publishDate DateTime
   imageUrl    String?
   createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum Category {
+  Exam
+  Event
+  General
+}
+
+enum Priority {
+  Normal
+  Urgent
 }
